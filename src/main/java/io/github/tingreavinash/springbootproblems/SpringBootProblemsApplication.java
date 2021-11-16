@@ -1,7 +1,9 @@
 package io.github.tingreavinash.springbootproblems;
 
 import io.github.tingreavinash.springbootproblems.entity.Employee;
+import io.github.tingreavinash.springbootproblems.entity.Manager;
 import io.github.tingreavinash.springbootproblems.service.EmployeeService;
+import io.github.tingreavinash.springbootproblems.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,9 +27,13 @@ public class SpringBootProblemsApplication implements CommandLineRunner {
 
 	@Autowired
 	public EmployeeService employeeService;
+	@Autowired
+	public ManagerService managerService;
 
 	@Override
 	public void run(String... args) throws Exception {
-		employeeService.display();
+		//employeeService.display();
+		Manager manager = managerService.getManager();
+		System.out.println(manager.getManagerName());
 	}
 }
