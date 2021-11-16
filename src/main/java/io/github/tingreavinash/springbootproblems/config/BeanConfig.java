@@ -14,7 +14,6 @@ public class BeanConfig {
     }
 
     @Bean("AtulBean")
-    @Primary
     public Employee getAtul(){
         return new Employee("Atul");
     }
